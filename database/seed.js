@@ -11,7 +11,6 @@ const setTitle = () => {
   return `${firstWord} ${secondWord} ${thirdWord}`.trim();
 };
 
-
 const setLocation = () => {
   const choices = ['Happy Hill', 'Meandering Stream', 'Vulcher Lake', 'Soft Meadows', 'Sunnyside', 'Haleakala', 'Great Gourge'];
 
