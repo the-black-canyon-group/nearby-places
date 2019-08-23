@@ -11,7 +11,7 @@ class NearbyService extends React.Component {
       <div>
         hello from the nearby places service
       </div>
-    )
+    );
   }
 }
 
