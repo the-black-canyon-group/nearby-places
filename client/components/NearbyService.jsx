@@ -1,4 +1,5 @@
 import React from 'react';
+import NearbyCard from './NearbyCard/NearbyCard.jsx'
 
 class NearbyService extends React.Component {
   constructor(props) {
@@ -9,7 +10,7 @@ class NearbyService extends React.Component {
   render() {
     return (
       <div>
-        hello from the nearby places service
+        <NearbyCard />
       </div>
     );
   }
