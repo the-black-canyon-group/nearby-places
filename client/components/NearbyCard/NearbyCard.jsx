@@ -4,21 +4,20 @@ import React from 'react';
 class NearbyCard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      properties: []
-    };
-  }
 
-  componentDidMount() {
-    fetch(`/api/nearbyplaces/15`)
-      .then(res => res.json())
-      .then(properties => this.setState({ properties }))
-      .catch(err => console.log(err))
   }
 
   render() {
+    const { placeDetails } = this.props;
+    const avgRating = placeDetails.ratings.reduce((review, accum) => accum + review) / placeDetails.ratings.length;
     return (
-      <div ></div>
+      <div className={styles.placeCard}>
+        <img className={styles.img} src={placeDetails.image}></img>
+        <h4 className={styles.roomType}>{placeDetails.roomType} - {placeDetails.location}</h4>
+        <h2 className={styles.title}>{placeDetails.title}</h2>
+        <p className={styles.price}>${placeDetails.price}/night</p>
+        <p className={styles.rating}>{avgRating} ({placeDetails.ratings.length})</p>
+      </div>
     )
   }
 
