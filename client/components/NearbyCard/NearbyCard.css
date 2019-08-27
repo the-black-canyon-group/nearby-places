@@ -1,0 +1,26 @@
+.placeCard {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 300px;
+  margin: auto;
+}
+
+.roomType {
+  margin: 3px 0px 3px 0px;
+}
+
+.title {
+  margin: 20px 0px 20px 0px;
+
+}
+
+.price {
+  margin: 3px 0px 3px 0px;
+
+}
+
+.rating {
+  margin: 3px 0px 3px 0px;
+
+}

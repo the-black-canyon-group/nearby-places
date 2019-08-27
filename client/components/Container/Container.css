@@ -1,0 +1,40 @@
+
+.wrapper {
+  width: 75vw;
+  display: flex;
+  margin: auto;
+}
+button {
+  background: none;
+  border: none;
+}
+.list {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 10px 10px 10px;
+  height: fit-content;
+  transform-origin: 315px;
+}
+.listItem{
+  display: flex;
+  text-align: center;
+  margin: 10px;
+}
+
+
+
+.disabled {
+  display: none;
+}
+
+.arrow {
+  color: #c5b2b2;
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+.arrow:focus {
+  outline: none;
+}

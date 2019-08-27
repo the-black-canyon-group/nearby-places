@@ -2,6 +2,8 @@ import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import axios from 'axios';
 import Container from '../client/components/Container/Container.jsx';
+import NearbyCard from '../client/components/NearbyCard/NearbyCard.jsx';
+
 
 jest.mock('axios');
 
@@ -64,7 +66,9 @@ test('Should fetch nearby places and store them in state', () => {
   return instance.componentDidMount().then(() => expect(instance.state.nearbyPlaces).toEqual(respArray));
 });
 
-test('Should pass property details as props to NearbyPlaceCard', () => {
-
-
+// cannot get test to show the rendered NearbyCard that should show up on componentDidMount. wrapper.debug() is only showing the unconditional divs.
+test('Should pass property details as props to NearbyCard', () => {
+  // let NearbyCard = jest.fn();
+  // let wrapper = mount(<Container id='2' />);
+  // expect(wrapper.find(NearbyCard).length).toBe(2);
 });

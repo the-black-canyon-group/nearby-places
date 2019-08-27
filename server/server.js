@@ -13,7 +13,6 @@ app.get('/api/nearbyplaces/:id', (req, res) => {
   const { id } = req.params;
   Property.find({ id })
     .then((property) => {
-      console.log(property[0].zip);
       const { zip } = property[0];
       Property.find()
         .then((allProperties) => {

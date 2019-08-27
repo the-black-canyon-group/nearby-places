@@ -10,7 +10,7 @@
   "scripts": {
     "seed-db": "node database/seed.js",
     "dev": "concurrently \"webpack -d -w\" \"nodemon server/server.js\"",
-    "test": "jest --watch --coverage"
+    "test": "jest --watch"
   },
   "dependencies": {
     "axios": "^0.19.0",

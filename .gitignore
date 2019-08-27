@@ -25,5 +25,4 @@ build/
 dist/
 
 coverage/
-public/bundle.js
 
