@@ -22,7 +22,7 @@ const setPrice = () => Math.floor(Math.random() * 150);
 const setRatings = () => {
   const listLength = Math.floor(Math.random() * 12);
   const ratingsList = [];
-  for (let i = 0; i <= listLength; i++) {
+  for (let i = 0; i <= listLength; i += 1) {
     const rating = Math.floor(Math.random() * 5) + 1;
     ratingsList.push(rating);
   }
@@ -46,7 +46,7 @@ const setImage = () => {
 };
 
 
-for (let i = 1; i <= 100; i++) {
+for (let i = 1; i <= 100; i += 1) {
   const newProperty = new Property({
     id: i,
     location: setLocation(),

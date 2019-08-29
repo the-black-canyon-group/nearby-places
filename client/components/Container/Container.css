@@ -1,0 +1,66 @@
+
+.wrapper {
+  width: 90vw;
+  display: flex;
+  margin: auto;
+}
+button {
+  background: none;
+  border: none;
+}
+.list {
+  display: flex;
+  justify-content: space-around;
+  width: 940px;
+  overflow: hidden;
+  padding: 10px 10px 10px 10px;
+  height: fit-content;
+}
+.listItem{
+  display: flex;
+  position: relative;
+  margin: 10px;
+
+}
+
+.btnWrapper {
+  display:flex;
+  justify-content: center;
+  width: 30px;
+}
+
+.disabled {
+  display: none;
+}
+
+.arrow {
+  color: #c5b2b2;
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+.arrow:focus {
+  outline: none;
+}
+
+.animateRight {
+  animation-name: slideRight;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideRight {
+  0% {right: 0;}
+  100% {right: 310px;}
+}
+
+.animateLeft {
+  animation-name: slideLeft;
+  animation-duration: 1s;
+  animation-fill-mode: forwards
+}
+
+@keyframes slideLeft {
+  0% {left: 0;}
+  100% {left: 310px;}
+}
