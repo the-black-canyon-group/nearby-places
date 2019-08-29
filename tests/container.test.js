@@ -66,9 +66,52 @@ test('Should fetch nearby places and store them in state', () => {
   return instance.componentDidMount().then(() => expect(instance.state.nearbyPlaces).toEqual(respArray));
 });
 
-// cannot get test to show the rendered NearbyCard that should show up on componentDidMount. wrapper.debug() is only showing the unconditional divs.
-test('Should pass property details as props to NearbyCard', () => {
-  // let NearbyCard = jest.fn();
-  // let wrapper = mount(<Container id='2' />);
-  // expect(wrapper.find(NearbyCard).length).toBe(2);
-});
+test('Should increment currentIdx when right button is clicked', () => {
+  const wrapper = mount(<Container id='3' />);
+  const event = {
+    preventDefault: () => { },
+    target: { id: 'right' }
+  }
+  wrapper.find('button#right').simulate('click', event)
+  expect(wrapper.state('currentIdx')).toBe(1)
+})
+
+test('Should decrement currentIdx when left button is clicked', () => {
+  const wrapper = mount(<Container id='3' />);
+  const event = {
+    preventDefault: () => { },
+    target: { id: 'left', className: '' }
+  }
+  wrapper.find('button#left').simulate('click', event);
+  expect(wrapper.state('currentIdx')).toBe(-1)
+})
+
+
+
+test('Should render a NearbyCard for each nearbyPlace in state', async () => {
+  let wrapper = await shallow(<Container id='3' />);
+
+  expect(wrapper.find(NearbyCard).length).toBe(3)
+})
+
+
+describe('NearbyCard', () => {
+  it('Should properly pass props into the component', async () => {
+    const place = {
+      id: 5,
+      location: 'Haleakala',
+      price: 75,
+      title: 'Test Place',
+      ratings: [4, 5],
+      roomType: 'Private Room',
+      image: 'abc',
+      zip: 76301
+    }
+    const wrapper = await mount(<NearbyCard placeDetails={place} />)
+    expect(wrapper.props()).toEqual({ placeDetails: place })
+    expect(wrapper.find('h4').text()).toBe('Private Room - Haleakala')
+    expect(wrapper.find('h2').text()).toBe('Test Place')
+  })
+})
+
+

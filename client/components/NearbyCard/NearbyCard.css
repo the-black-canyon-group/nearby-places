@@ -6,21 +6,25 @@
   margin: auto;
 }
 
+.img {
+  border-radius: 3px;
+}
+
 .roomType {
-  margin: 3px 0px 3px 0px;
+  margin: 0
 }
 
 .title {
-  margin: 20px 0px 20px 0px;
+  margin: 0
 
 }
 
 .price {
-  margin: 3px 0px 3px 0px;
+  margin: 0
 
 }
 
 .rating {
-  margin: 3px 0px 3px 0px;
+  margin: 0
 
 }
