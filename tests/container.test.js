@@ -93,26 +93,17 @@ test('Should decrement currentIdx when left button is clicked', (done) => {
 });
 
 
-test('Should render a NearbyCard for each nearbyPlace in state', async () => {
-  const wrapper = await shallow(<Container id="3" />);
-
-  expect(wrapper.find(NearbyCard).length).toBe(3);
-});
-
-
-describe('NearbyCard', () => {
-  it('Should properly pass props into the component', async () => {
-    const place = {
-      id: 5,
-      location: 'Haleakala',
-      price: 75,
-      title: 'Test Place',
-      ratings: [4, 5],
-      roomType: 'Private Room',
-      image: 'abc',
-      zip: 76301,
+describe('handleLike', () => {
+  it('Should add a place to likedPlaces in state on click', () => {
+    const wrapper = shallow(<Container />);
+    const event = {
+      preventDefault: () => { },
+      target: { id: 1 },
     };
-    const wrapper = await mount(<NearbyCard placeDetails={place} />);
-    expect(wrapper.props()).toEqual({ placeDetails: place });
+    const instance = wrapper.instance();
+    instance.handleLike(event);
+    expect(instance.state.likedPlaces).toEqual([1]);
+    instance.handleLike(event);
+    expect(instance.state.likedPlaces).toEqual([]);
   });
 });

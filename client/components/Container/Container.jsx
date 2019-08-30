@@ -7,11 +7,13 @@ class Container extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      likedPlaces: [],
       nearbyPlaces: [],
       currentIdx: 0
     };
     this.getCurrentCards = this.getCurrentCards.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleArrowClick = this.handleArrowClick.bind(this);
+    this.handleLike = this.handleLike.bind(this);
   }
 
   componentDidMount() {
@@ -21,7 +23,7 @@ class Container extends React.Component {
       .catch(err => console.log(err))
   }
 
-  handleClick(e) {
+  handleArrowClick(e) {
     e.preventDefault();
     const { currentIdx } = this.state;
     let cards = document.querySelectorAll(`#card`)
@@ -62,6 +64,19 @@ class Container extends React.Component {
 
   }
 
+  handleLike(e) {
+    e.preventDefault();
+    const { likedPlaces } = this.state;
+    const id = Number(e.target.id)
+    if (likedPlaces.includes(id)) {
+      const newLikedPlaces = likedPlaces.filter(place => place !== id)
+      this.setState({ likedPlaces: newLikedPlaces })
+    } else {
+      this.setState({ likedPlaces: likedPlaces.concat(Number(id)) })
+
+    }
+  }
+
   getCurrentCards() {
     const { nearbyPlaces, currentIdx } = this.state
     if (currentIdx === 0 && nearbyPlaces.length > 0) {
@@ -78,20 +93,22 @@ class Container extends React.Component {
     let cardIdx = 0;
 
     return (
-      <div className={styles.wrapper}>
-        More Places to Stay
-        <div className={styles.btnWrapper} >
-          <button id='left' onClick={this.handleClick} className={currentIdx > 0 ? styles.arrow : styles.disabled}><i className="fa fa-chevron-left"></i></button>
-        </div>
-        <div className={styles.list}>
-          {this.getCurrentCards().map(place => (
-            <div className={cardIdx !== 0 && cardIdx !== 4 ? styles.listItem : styles.disabled} id={'card'} key={cardIdx += 1} > <NearbyCard placeDetails={place} /> </div>
-          ))}
-        </div>
-        <div className={styles.btnWrapper}>
-          <button id='right' onClick={this.handleClick} className={currentIdx < nearbyPlaces.length - 3 ? styles.arrow : styles.disabled}><i className="fa fa-chevron-right"></i></button>
-        </div>
-      </div >
+      <div className={styles.nearbyContainer}>
+        <h1 className={styles.headline}>More Places to Stay</h1>
+        <div className={styles.wrapper}>
+          <div className={styles.btnWrapper} >
+            <button id='left' onClick={this.handleArrowClick} className={currentIdx > 0 ? styles.arrow : styles.disabled}><i className="fa fa-chevron-left"></i></button>
+          </div>
+          <div className={styles.list}>
+            {this.getCurrentCards().map(place => (
+              <div className={cardIdx !== 0 && cardIdx !== 4 ? styles.listItem : styles.disabled} id={'card'} key={cardIdx += 1} > <NearbyCard handleLike={this.handleLike} isLiked={this.state.likedPlaces.includes(place.id)} placeDetails={place} /> </div>
+            ))}
+          </div>
+          <div className={styles.btnWrapper}>
+            <button id='right' onClick={this.handleArrowClick} className={currentIdx < nearbyPlaces.length - 3 ? styles.arrow : styles.disabled}><i className="fa fa-chevron-right"></i></button>
+          </div>
+        </div >
+      </div>
     )
   }
 }

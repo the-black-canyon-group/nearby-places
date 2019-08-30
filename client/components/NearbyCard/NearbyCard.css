@@ -44,3 +44,11 @@
   color: #777;
 
 }
+
+.likeButton {
+position: relative;
+top: 10px;
+left: 230px;
+font-size: 2em;
+color: white;
+}

@@ -1,3 +1,14 @@
+.nearbyContainer {
+  font-family: arial;
+
+}
+
+.headline {
+  color: #444;
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  margin-left: 50px;
+}
 
 .wrapper {
   display: flex;
@@ -5,15 +16,11 @@
 }
 button {
   background: white;
-  position: relative;
   border: none;
-  z-index: 333;
 }
 .list {
   display: flex;
   justify-content: center;
-  /* position: relative;
-  right: 15px; */
   width: 1060px;
   overflow: hidden;
   padding: 0;
@@ -24,13 +31,18 @@ button {
   width: 333;
   position: relative;
   padding: 5px;
+  cursor: pointer;
 }
 
 .btnWrapper {
-  display:flex;
+  display: flex;
   justify-content: center;
   width: 30px;
+  height: fit-content;
+  top: 110px;
+  position: relative;
 }
+
 
 .disabled {
   display: none;
@@ -40,8 +52,6 @@ button {
   color: #c5b2b2;
   font-size: 1.5em;
   font-weight: 100;
-  position: relative;
-  bottom: 35px;
 }
 
 .arrow:focus {

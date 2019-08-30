@@ -1,11 +1,11 @@
 import styles from './NearbyCard.css';
 import React from 'react';
+import LikeButton from '../LikeButton/LikeButton.jsx';
 import StarRatings from 'react-star-ratings'
 
 class NearbyCard extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   render() {
@@ -14,6 +14,9 @@ class NearbyCard extends React.Component {
     return (
       <div className={styles.placeCard}>
         <div className={styles.imgWrapper}>
+          <div className={styles.likeButton}>
+            <LikeButton placeId={placeDetails.id} handleLike={this.props.handleLike} isLiked={this.props.isLiked} />
+          </div>
           <img className={styles.img} src={placeDetails.image}></img>
         </div>
         <h4 className={styles.roomType}>{placeDetails.roomType.toUpperCase()} · {placeDetails.location.toUpperCase()}</h4>
