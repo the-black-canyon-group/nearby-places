@@ -1,26 +1,29 @@
 
 .wrapper {
-  width: 90vw;
   display: flex;
   margin: auto;
 }
 button {
-  background: none;
+  background: white;
+  position: relative;
   border: none;
+  z-index: 333;
 }
 .list {
   display: flex;
-  justify-content: space-around;
-  width: 940px;
+  justify-content: center;
+  /* position: relative;
+  right: 15px; */
+  width: 1060px;
   overflow: hidden;
-  padding: 10px 10px 10px 10px;
+  padding: 0;
   height: fit-content;
 }
 .listItem{
   display: flex;
+  width: 333;
   position: relative;
-  margin: 10px;
-
+  padding: 5px;
 }
 
 .btnWrapper {
@@ -37,6 +40,8 @@ button {
   color: #c5b2b2;
   font-size: 1.5em;
   font-weight: 100;
+  position: relative;
+  bottom: 35px;
 }
 
 .arrow:focus {
@@ -44,23 +49,27 @@ button {
 }
 
 .animateRight {
+  display: flex;
+  padding: 5px;
   animation-name: slideRight;
-  animation-duration: 1s;
+  animation-duration: .5s;
   animation-fill-mode: forwards;
 }
 
 @keyframes slideRight {
   0% {right: 0;}
-  100% {right: 310px;}
+  100% {right: 340px;}
 }
 
 .animateLeft {
+  display: flex;
+  padding: 5px;
   animation-name: slideLeft;
-  animation-duration: 1s;
+  animation-duration: .5s;
   animation-fill-mode: forwards
 }
 
 @keyframes slideLeft {
   0% {left: 0;}
-  100% {left: 310px;}
+  100% {left: 340px;}
 }

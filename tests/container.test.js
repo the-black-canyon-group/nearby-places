@@ -66,33 +66,38 @@ test('Should fetch nearby places and store them in state', () => {
   return instance.componentDidMount().then(() => expect(instance.state.nearbyPlaces).toEqual(respArray));
 });
 
-test('Should increment currentIdx when right button is clicked', () => {
-  const wrapper = mount(<Container id='3' />);
+test('Should increment currentIdx when right button is clicked', (done) => {
+  const wrapper = mount(<Container id="3" />);
   const event = {
     preventDefault: () => { },
-    target: { id: 'right' }
-  }
-  wrapper.find('button#right').simulate('click', event)
-  expect(wrapper.state('currentIdx')).toBe(1)
-})
+    target: { id: 'right' },
+  };
+  wrapper.find('button#right').simulate('click', event);
+  setTimeout(() => {
+    expect(wrapper.state('currentIdx')).toBe(1);
+    done();
+  }, 500);
+});
 
-test('Should decrement currentIdx when left button is clicked', () => {
-  const wrapper = mount(<Container id='3' />);
+test('Should decrement currentIdx when left button is clicked', (done) => {
+  const wrapper = mount(<Container id="3" />);
   const event = {
     preventDefault: () => { },
-    target: { id: 'left', className: '' }
-  }
+    target: { id: 'left', className: '' },
+  };
   wrapper.find('button#left').simulate('click', event);
-  expect(wrapper.state('currentIdx')).toBe(-1)
-})
-
+  setTimeout(() => {
+    expect(wrapper.state('currentIdx')).toBe(-1);
+    done();
+  }, 500);
+});
 
 
 test('Should render a NearbyCard for each nearbyPlace in state', async () => {
-  let wrapper = await shallow(<Container id='3' />);
+  const wrapper = await shallow(<Container id="3" />);
 
-  expect(wrapper.find(NearbyCard).length).toBe(3)
-})
+  expect(wrapper.find(NearbyCard).length).toBe(3);
+});
 
 
 describe('NearbyCard', () => {
@@ -105,13 +110,9 @@ describe('NearbyCard', () => {
       ratings: [4, 5],
       roomType: 'Private Room',
       image: 'abc',
-      zip: 76301
-    }
-    const wrapper = await mount(<NearbyCard placeDetails={place} />)
-    expect(wrapper.props()).toEqual({ placeDetails: place })
-    expect(wrapper.find('h4').text()).toBe('Private Room - Haleakala')
-    expect(wrapper.find('h2').text()).toBe('Test Place')
-  })
-})
-
-
+      zip: 76301,
+    };
+    const wrapper = await mount(<NearbyCard placeDetails={place} />);
+    expect(wrapper.props()).toEqual({ placeDetails: place });
+  });
+});

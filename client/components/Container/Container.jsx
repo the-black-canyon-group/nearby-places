@@ -31,13 +31,16 @@ class Container extends React.Component {
         cards[i].classList.add(styles.listItem);
         cards[i].classList.add(styles.animateRight);
       }
-      for (let i = 0; i < cards.length; i += 1) {
-        if (i === 0 || i === 4) {
-          cards[i].classList.add(styles.disabled)
+
+      setTimeout(() => {
+        for (let i = 0; i < cards.length; i += 1) {
+          if (i === 0 || i === 4) {
+            cards[i].classList.add(styles.disabled)
+          }
+          cards[i].classList.remove(styles.animateRight);
         }
-        cards[i].classList.remove(styles.animateRight);
-      }
-      this.setState({ currentIdx: currentIdx + 1 })
+        this.setState({ currentIdx: currentIdx + 1 })
+      }, 500)
 
     } else {
       for (let i = 0; i < cards.length; i += 1) {
@@ -45,13 +48,15 @@ class Container extends React.Component {
         cards[i].classList.add(styles.listItem);
         cards[i].classList.add(styles.animateLeft);
       }
-      for (let i = 0; i < cards.length; i += 1) {
-        if (i === 0 || i === 4) {
-          cards[i].classList.add(styles.disabled)
+      setTimeout(() => {
+        for (let i = 0; i < cards.length; i += 1) {
+          if (i === 0 || i === 4) {
+            cards[i].classList.add(styles.disabled)
+          }
+          cards[i].classList.remove(styles.animateLeft);
         }
-        cards[i].classList.remove(styles.animateLeft);
-      }
-      this.setState({ currentIdx: currentIdx - 1 })
+        this.setState({ currentIdx: currentIdx - 1 })
+      }, 500)
 
     }
 

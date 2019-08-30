@@ -21,6 +21,7 @@
     "mongoose": "^5.6.10",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-star-ratings": "^2.3.0",
     "style-loader": "^1.0.0"
   },
   "devDependencies": {
