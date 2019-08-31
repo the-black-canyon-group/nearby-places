@@ -1,3 +1,9 @@
+
+body{
+  display:flex;
+  justify-content: center;
+}
+
 .nearbyContainer {
   font-family: arial;
 
@@ -39,7 +45,7 @@ button {
   justify-content: center;
   width: 30px;
   height: fit-content;
-  top: 110px;
+  top: 130px;
   position: relative;
 }
 

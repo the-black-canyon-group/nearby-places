@@ -41,7 +41,7 @@ const setZip = () => {
 };
 
 const setImage = () => {
-  const images = ['https://fec-images.s3-us-west-1.amazonaws.com/download+(1).jpeg', 'https://fec-images.s3-us-west-1.amazonaws.com/download+(2).jpeg', 'https://fec-images.s3-us-west-1.amazonaws.com/download+(3).jpeg', 'https://fec-images.s3-us-west-1.amazonaws.com/download+(4).jpeg', 'https://fec-images.s3-us-west-1.amazonaws.com/download+(5).jpeg', 'https://fec-images.s3-us-west-1.amazonaws.com/download+(6).jpeg', 'https://fec-images.s3-us-west-1.amazonaws.com/download+(7).jpeg', 'https://fec-images.s3-us-west-1.amazonaws.com/download+(8).jpeg', 'https://fec-images.s3-us-west-1.amazonaws.com/download.jpeg'];
+  const images = ['https://fec-images.s3-us-west-1.amazonaws.com/download+(1).jpeg', 'https://fec-images.s3-us-west-1.amazonaws.com/download+(2).jpeg', 'https://fec-images.s3-us-west-1.amazonaws.com/download+(3).jpeg', 'https://fec-images.s3-us-west-1.amazonaws.com/download+(4).jpeg', 'https://fec-images.s3-us-west-1.amazonaws.com/download+(5).jpeg', 'https://fec-images.s3-us-west-1.amazonaws.com/download+(6).jpeg', 'https://fec-images.s3-us-west-1.amazonaws.com/download+(7).jpeg', 'https://fec-images.s3-us-west-1.amazonaws.com/download+(8).jpeg', 'https://fec-images.s3-us-west-1.amazonaws.com/download.jpeg', 'https://fec-images.s3-us-west-1.amazonaws.com/bernadette-gatsby-bN_TkedaBuQ-unsplash.jpg', 'https://fec-images.s3-us-west-1.amazonaws.com/jesse-roberts-561igiTyvSk-unsplash.jpg'];
   return images[Math.floor(Math.random() * images.length)];
 };
 

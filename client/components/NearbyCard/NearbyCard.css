@@ -46,9 +46,11 @@
 }
 
 .likeButton {
-position: relative;
-top: 10px;
-left: 230px;
-font-size: 2em;
-color: white;
+  float: left;
+  position: relative;
+  top: 40px;
+  left: 285px;
+  font-size: 2em;
+  color: white;
+  z-index: 40;
 }
