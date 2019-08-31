@@ -44,3 +44,13 @@
   color: #777;
 
 }
+
+.likeButton {
+  float: left;
+  position: relative;
+  top: 40px;
+  left: 285px;
+  font-size: 2em;
+  color: white;
+  z-index: 40;
+}
