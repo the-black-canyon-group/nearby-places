@@ -10,7 +10,7 @@ class NearbyService extends React.Component {
   render() {
     return (
       <div>
-        <Container id='26' />
+        <Container id={this.props.id} />
       </div>
     );
   }

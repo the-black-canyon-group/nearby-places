@@ -94,7 +94,7 @@ test('Should decrement currentIdx when left button is clicked', (done) => {
 
 
 describe('handleLike', () => {
-  it('Should add a place to likedPlaces in state on click', () => {
+  it('Should add a place to likedPlaces in state on click, or remove it if it already exists', () => {
     const wrapper = shallow(<Container />);
     const event = {
       preventDefault: () => { },

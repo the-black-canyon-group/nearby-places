@@ -18,7 +18,7 @@ class Container extends React.Component {
 
   componentDidMount() {
     const id = this.props.id || 2;
-    return axios.get(`/api/nearbyplaces/${id}`)
+    return axios.get(`http://localhost:3004/api/nearbyplaces/${id}`)
       .then(res => this.setState({ nearbyPlaces: res.data.nearbyPlaces }))
       .catch(err => console.log(err))
   }
